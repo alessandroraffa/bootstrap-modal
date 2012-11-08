@@ -294,17 +294,13 @@
                 });
               }
               else {
-                _modal_action.unbind('click');
-                _modal_action.attr('href','#');
-                _modal_action.attr('data-dismiss','modal');
-              }
-
-              if ( action.href ) {
-                _modal_action.unbind('click');
-                _modal_action.attr('href',action.href);
-              }
-              else {
-                _modal_action.attr('href','#');
+                if ( action.href ) {
+                  _modal_action.attr('href',action.href);
+                }
+                else {
+                  _modal_action.attr('href','#');
+                  _modal_action.attr('data-dismiss','modal');
+                }
               }
 
               _modal_footer.append(_modal_action);
