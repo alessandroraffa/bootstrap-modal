@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>bootstrapModal example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <style>
+      body{margin:20px auto}
+      footer{padding:20px;text-align:center}
+    </style>
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  </head>
+  <body>
+    <div class="container">
+
+      <header>
+        <h2 class="text-info">
+          bootstrapModal example
+          <small>developed by <a href="http://twitter.com/alessandroraffa" class="external">Alessandro Raffa</a></small>
+        </h2>
+      </header>
+
+      <p class="well">
+        <strong>bootstrapModal</strong> is a function that helps you... bla bla bla...
+      </p>
+
+      <p class="lead">
+        Simple notification example<br>
+        <button id="action1" class="btn btn-info"><i class="icon-info-sign icon-white"></i> Notification</button>
+      </p>
+
+      <p class="lead">
+        Simple alert example<br>
+        <button id="action2" class="btn btn-warning"><i class="icon-exclamation-sign icon-white"></i> Alert</button>
+      </p>
+
+      <p class="lead">
+        Simple confirm example<br>
+        <button id="action3" class="btn btn-danger"><i class="icon-trash icon-white"></i> Dangerous action</button>
+      </p>
+
+      <p class="lead">
+        Autodismiss example<br>
+        <button id="action4" class="btn btn-success"><i class="icon-time icon-white"></i> Autodismiss</button>
+      </p>
+
+      <p class="lead">
+        Multi actions example<br>
+        <button id="action5" class="btn btn-primary"><i class="icon-file icon-white"></i> Multi actions</button>
+      </p>
+
+      <footer>
+        bootstrapModal
+        |
+        Copyright &copy; 2012 <a href="http://twitter.com/alessandroraffa" class="external">Alessandro Raffa</a>
+        |
+        Dual licensed under the
+        <a href="http://opensource.org/licenses/mit-license.php" class="external">MIT</a>
+        and
+        <a href="http://www.gnu.org/licenses/gpl.html" class="external">GPL</a>
+        licenses
+      </footer>
+
+    </div>
+    <script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+    <script src="jquery-bootstrapModal.js"></script>
+    <script>
+
+      $(document).ready(function(){
+
+        $().bootstrapModal({
+          dismiss:true,
+          title:'Welcome to bootstrapModal example',
+          title_style:'info',
+          body:'View source to see how it works',
+          dismiss_label:'Click here to see other examples'
+        });
+
+      });
+
+      $('#action1').click(function(){
+        $().bootstrapModal({
+          title:'Notification',
+          title_style:'info',
+          body:'Just a notification: dismissable, without any action.',
+          action:null,
+          dismiss_label:'Dismiss'
+        });
+      });
+
+      $('#action2').click(function(){
+        $().bootstrapModal({
+          title:'Alert',
+          title_style:'warning',
+          body:'This is an alert!<br>Just like a Javascript alerts, you read it and click Ok to dismiss it.',
+          action:null
+        });
+      });
+
+      $('#action3').click(function(){
+        $().bootstrapModal({
+          title:'Dangerous action',
+          title_style:'error',
+          body:'Do it or not?<br>Think again before decide what to do.<br>Just like a Javascript confirm, you read it and click Cancel to dismiss it.',
+          action:{
+            label:'Do it!',
+            style:'danger',
+            callback:function(){
+              alert('This Javascript alert simulates the execution of an action');
+            }
+          },
+          dismiss_label:'Cancel'
+        });
+      });
+
+      $('#action4').click(function(){
+        $().bootstrapModal({
+          title:'Autodismiss notification',
+          title_style:'success',
+          body:'Read fast, time is ticking!',
+          action:null,
+          autodismiss:true,
+          dismiss:false
+        });
+      });
+
+      $('#action5').click(function(){
+        $().bootstrapModal({
+          title:'Multi actions',
+          title_style:'info',
+          body:'A, B or C? ;-)',
+          action:[
+            {
+              label:'Action A',
+              style:'danger',
+              callback:function(){
+                alert('Executing action A');
+              }
+            },
+            {
+              label:'Action B',
+              style:'primary',
+              callback:function(){
+                alert('Executing action B');
+              }
+            },
+            {
+              label:'Action C',
+              style:'success',
+              callback:function(){
+                alert('Executing action C');
+              }
+            }
+          ],
+          dismiss_label:'None of all!'
+        });
+      });
+
+      $('a.external').click( function() {
+        window.open(this.href);
+        return false;
+      });
+
+    </script>
+  </body>
+</html>
