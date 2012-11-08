@@ -127,9 +127,16 @@
        */
       function ___run() {
 
+        // destroy other bootstrap modal eventually active
+        ___destroy($('div.modal.bootstrap-modal'));
+
         _modal.addClass('modal');
+        _modal.addClass('bootstrap-modal');
+
         _modal_header.addClass('modal-header');
+
         _modal_footer.addClass('modal-footer');
+
         _modal_body.addClass('modal-body');
 
         if ( ___checkType( options.body ) == 'object' && body instanceof jQuery ) {
@@ -213,7 +220,7 @@
 
           setTimeout(
             function(){
-              ___destroy();
+              ___destroy(_modal);
             },
             countdown*1000
           );
@@ -283,7 +290,7 @@
               if ( ___checkType(action.callback) === 'function' ) {
                 _modal_action.click(function(){
                   action.callback();
-                  ___destroy();
+                  ___destroy(_modal);
                 });
               }
               else {
@@ -315,10 +322,10 @@
       /**
        *
        */
-      function ___destroy(){
-        _modal.modal('hide');
-        _modal.modal({show:false});
-        _modal.remove();
+      function ___destroy(modal_element){
+        modal_element.modal('hide');
+        modal_element.modal({show:false});
+        modal_element.remove();
       }
 
     }
