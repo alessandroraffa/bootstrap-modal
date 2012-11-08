@@ -60,6 +60,7 @@
         dismiss_label:  'Ok',
         autodismiss:    false,
         action:         {},
+        callback:       null,
         countdown:      3,
         debug:          false
       }
@@ -221,6 +222,9 @@
           setTimeout(
             function(){
               ___destroy(_modal);
+              if ( ___checkType(options.callback) == 'function' ) {
+                options.callback();
+              }
             },
             countdown*1000
           );
@@ -238,6 +242,27 @@
           );
 
           counter = setInterval(function(){___timer();},1000);
+
+        }
+        else {
+
+          if ( ___checkType(options.callback) == 'function' ) {
+
+            _modal.unbind('hidden');
+
+            _modal.on('hidden',function(){
+              options.callback();
+              _modal.unbind('hidden');
+              _modal.on('hidden',function(){ ___destroy(_modal); });
+            });
+
+          }
+          else {
+
+            _modal.unbind('hidden');
+            _modal.on('hidden',function(){ ___destroy(_modal); });
+
+          }
 
         }
 
