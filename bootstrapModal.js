@@ -61,7 +61,7 @@
         autodismiss:    false,
         action:         {},
         callback:       null,
-        countdown:      3,
+        countdown:      3,      // seconds
         debug:          false
       }
 
@@ -217,7 +217,7 @@
 
         if ( ___checkType(options.autodismiss) == 'boolean' && options.autodismiss === true ) {
 
-          countdown = 3; // @todo set up a default countdown variable, configurable via options
+          // countdown = 3; // @todo set up a default countdown variable, configurable via options
 
           setTimeout(
             function(){
