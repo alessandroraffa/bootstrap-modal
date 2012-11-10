@@ -2,9 +2,13 @@
 
 *A simple function for creating modals*
 
-bootstrapModal helps you rapidly use Twitter Bootstrap modal JavaScript plugin for creating alerts, notifications, confirm modals and more.
+bootstrapModal helps you rapidly use <a href="http://twitter.github.com/bootstrap/javascript.html#modals">Twitter Bootstrap modal JavaScript plugin</a> for creating alerts, notifications, confirm modals and more.
 
-Just write:
+With bootstrapModal you do not need to add any HTML hidden div.
+
+Just include jQuery 1.8 and Bootstrap 2.2.1.
+
+Write:
 
 ```javascript
 $().bootstrapModal({
@@ -34,6 +38,6 @@ $('#delete-button').click(function(){
 });
 ```
 
-See the example index.html for more options.
+See more examples into index.html for more options.
 
 # });
