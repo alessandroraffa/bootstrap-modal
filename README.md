@@ -1,5 +1,4 @@
-bootstrap-modal
-===============
+# bootstrapModal({
 
 *A simple rapid modal function*
 
@@ -17,3 +16,5 @@ $().bootstrapModal({
 and it will display a nice dismissable modal.
 
 See the example index.html for more options.
+
+# });
