@@ -4,12 +4,12 @@ bootstrapModal helps you rapidly use Twitter Bootstrap modal JavaScript plugin f
 
 Just write:
 
-  ```javascript
-  $().bootstrapModal({
-    title: 'Alert',
-    body:  'This is an alert'
-  });
-  ```
+```javascript
+$().bootstrapModal({
+  title: 'Alert',
+  body:  'This is an alert'
+});
+```
 
 and it will display a nice dismissable modal.
 
