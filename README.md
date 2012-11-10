@@ -10,7 +10,7 @@ Just write:
 ```javascript
 $().bootstrapModal({
   title: 'Alert',
-  body:  'This is an alert'
+  body:  'This is an alert!'
 });
 ```
 
