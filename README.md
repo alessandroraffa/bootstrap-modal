@@ -1,4 +1,4 @@
-# bootstrapModal({
+# $().bootstrapModal({
 
 *A simple rapid modal function*
 
