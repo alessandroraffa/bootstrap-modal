@@ -1,5 +1,8 @@
 bootstrap-modal
 ===============
+
+*A simple rapid modal function*
+
 bootstrapModal helps you rapidly use Twitter Bootstrap modal JavaScript plugin for creating alerts, notifications, confirm modals and more.
 
 Just write:
